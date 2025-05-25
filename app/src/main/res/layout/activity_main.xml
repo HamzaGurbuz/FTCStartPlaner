@@ -19,8 +19,6 @@
         android:textColor="#212121"
         android:layout_marginBottom="48dp"/>
 
-
-
     <!-- Yeni Strateji -->
     <Button
         android:id="@+id/btnCreateStrategy"
@@ -44,5 +42,21 @@
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
+    <!-- Boşluk -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <!-- Pars Robotics Etiketi -->
+    <TextView
+        android:id="@+id/tvCredits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Developed by Pars Robotics #6436"
+        android:textColor="#999999"
+        android:textSize="12sp"
+        android:layout_marginTop="24dp"
+        android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>
