@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="24dp"
+    android:background="#f5f5f5">
+
+    <!-- Başlık -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FTC Start Planner"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#212121"
+        android:layout_marginBottom="48dp"/>
+
+
+
+    <!-- Yeni Strateji -->
+    <Button
+        android:id="@+id/btnCreateStrategy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="➕ Create New Strategy"
+        android:textSize="18sp"
+        android:padding="16dp"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Kayıtlıları Görüntüle -->
+    <Button
+        android:id="@+id/btnViewStrategies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#2196F3"
+        android:padding="16dp"
+        android:text="📂 Look at Strategies"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+
+</LinearLayout>
