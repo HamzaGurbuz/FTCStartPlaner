@@ -29,6 +29,7 @@ public class StrategyListActivity extends AppCompatActivity {
 
         loadStrategies();
     }
+    
 
     private void loadStrategies() {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
