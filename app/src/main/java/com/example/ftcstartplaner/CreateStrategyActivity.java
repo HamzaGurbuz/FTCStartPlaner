@@ -3,12 +3,14 @@ package com.example.ftcstartplaner;
 import android.content.ContentValues;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.ftcstartplaner.R;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -24,6 +26,13 @@ public class CreateStrategyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_strategy);
 
+        // Toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Create Strategy");
+
+        // View bağlantıları
         etName = findViewById(R.id.etStrategyName);
         etDesc = findViewById(R.id.etDescription);
         etAlliance = findViewById(R.id.etAlliance);
@@ -36,7 +45,6 @@ public class CreateStrategyActivity extends AppCompatActivity {
         dbHelper = new StrategyDatabaseHelper(this);
 
         btnClear.setOnClickListener(v -> drawingView.clear());
-
         btnSave.setOnClickListener(v -> saveStrategy());
     }
 
@@ -52,7 +60,6 @@ public class CreateStrategyActivity extends AppCompatActivity {
             return;
         }
 
-        // Çizimi bitmap olarak al
         Bitmap drawingBitmap = drawingView.getBitmap();
         String drawingPath = saveBitmapToFile(drawingBitmap);
         if (drawingPath == null) {
@@ -60,7 +67,6 @@ public class CreateStrategyActivity extends AppCompatActivity {
             return;
         }
 
-        // DB’ye kaydet
         ContentValues values = new ContentValues();
         values.put(StrategyDatabaseHelper.COLUMN_NAME, name);
         values.put(StrategyDatabaseHelper.COLUMN_DESCRIPTION, desc);
@@ -73,7 +79,7 @@ public class CreateStrategyActivity extends AppCompatActivity {
 
         if (id > 0) {
             Toast.makeText(this, "Strategy saved!", Toast.LENGTH_SHORT).show();
-            finish(); // Kaydettikten sonra geri dön
+            finish();
         } else {
             Toast.makeText(this, "Error saving strategy!", Toast.LENGTH_SHORT).show();
         }
@@ -89,5 +95,14 @@ public class CreateStrategyActivity extends AppCompatActivity {
             e.printStackTrace();
             return null;
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
