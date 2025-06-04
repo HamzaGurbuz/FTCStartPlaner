@@ -40,7 +40,8 @@
         android:padding="16dp"
         android:text="📂 Look at Strategies"
         android:textColor="#FFFFFF"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        />
 
     <!-- Boşluk -->
     <View

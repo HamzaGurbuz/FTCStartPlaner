@@ -21,24 +21,23 @@ public class DrawingView extends View {
     public DrawingView(Context context, AttributeSet attrs) {
         super(context, attrs);
         paint.setAntiAlias(true);
-        paint.setColor(Color.BLACK);
+        paint.setColor(Color.BLACK); // Varsayılan renk
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(8f);
 
-        // Drawable’dan bitmap olarak arka planı yükle
+        // Arka plan görselini yükle
         backgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.field);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
-        // Önce arka plan resmini çiz
+        // Arka plan resmi
         if (backgroundBitmap != null) {
-            // Bitmap'i view boyutuna göre ölçekle
             Bitmap scaledBitmap = Bitmap.createScaledBitmap(backgroundBitmap, getWidth(), getHeight(), false);
             canvas.drawBitmap(scaledBitmap, 0, 0, null);
         }
 
-        // Üzerine çizim yolunu çiz
+        // Kullanıcının çizdiği çizgiler
         canvas.drawPath(path, paint);
     }
 
@@ -57,7 +56,8 @@ public class DrawingView extends View {
             case MotionEvent.ACTION_UP:
                 break;
         }
-        invalidate();
+
+        invalidate(); // Ekranı yeniden çiz
         return true;
     }
 
@@ -71,5 +71,10 @@ public class DrawingView extends View {
         Canvas canvas = new Canvas(bitmap);
         draw(canvas);
         return bitmap;
+    }
+
+    public void setPaintColor(int color) {
+        paint.setColor(color);
+        invalidate();
     }
 }
