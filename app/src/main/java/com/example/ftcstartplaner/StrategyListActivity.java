@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,6 +23,16 @@ public class StrategyListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_strategy_list);
 
+        // Toolbar kurulum
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setTitle("Strategies");
+        }
+
+        // RecyclerView ayarları
         recyclerView = findViewById(R.id.recyclerViewStrategies);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -29,7 +40,13 @@ public class StrategyListActivity extends AppCompatActivity {
 
         loadStrategies();
     }
-    
+
+    // Geri butonuna basıldığında sayfayı kapat
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
 
     private void loadStrategies() {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
