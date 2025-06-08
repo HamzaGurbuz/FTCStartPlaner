@@ -2,6 +2,7 @@ package com.example.ftcstartplaner;
 
 import android.content.ContentValues;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -32,6 +33,11 @@ public class CreateStrategyActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Create Strategy");
 
+        Button btnColorBlack = findViewById(R.id.btnColorBlack);
+        Button btnColorRed = findViewById(R.id.btnColorRed);
+        Button btnColorBlue = findViewById(R.id.btnColorBlue);
+
+
         // View bağlantıları
         etName = findViewById(R.id.etStrategyName);
         etDesc = findViewById(R.id.etDescription);
@@ -46,6 +52,23 @@ public class CreateStrategyActivity extends AppCompatActivity {
 
         btnClear.setOnClickListener(v -> drawingView.clear());
         btnSave.setOnClickListener(v -> saveStrategy());
+
+
+        btnColorBlack.setOnClickListener(v -> {
+
+            drawingView.setPaintColor(Color.BLACK);
+        });
+
+        btnColorRed.setOnClickListener(v -> {
+
+            drawingView.setPaintColor(Color.RED);
+        });
+
+        btnColorBlue.setOnClickListener(v -> {
+
+            drawingView.setPaintColor(Color.BLUE);
+        });
+
     }
 
     private void saveStrategy() {

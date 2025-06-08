@@ -80,6 +80,38 @@
                 android:layout_marginBottom="16dp"
                 android:elevation="4dp"/>
 
+            <LinearLayout
+                android:id="@+id/colorPalette"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="8dp">
+
+                <Button
+                    android:id="@+id/btnColorBlack"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="#000000" />
+
+                <Button
+                    android:id="@+id/btnColorRed"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="#FF0000"
+                    android:layout_marginStart="10dp"/>
+
+                <Button
+                    android:id="@+id/btnColorBlue"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="#0000FF"
+                    android:layout_marginStart="10dp"/>
+
+
+            </LinearLayout>
+
+
             <!-- Temizle Butonu -->
             <Button
                 android:id="@+id/btnClearDrawing"
