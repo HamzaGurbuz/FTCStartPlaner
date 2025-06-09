@@ -11,18 +11,21 @@ import com.example.ftcstartplaner.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnCreate, btnView;
-    ImageButton btnSettings;  // Ayarlar butonu
+    Button btnCreate, btnView; // Create and View Buttons
+    ImageButton btnSettings;  // Settings Button
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Connecting buttons on java
         btnCreate = findViewById(R.id.btnCreateStrategy);
         btnView = findViewById(R.id.btnViewStrategies);
-        btnSettings = findViewById(R.id.btnSettings);  // Ayarlar butonu bağlantısı
+        btnSettings = findViewById(R.id.btnSettings);
 
+
+        // When you click the crate button what is gonna happen
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // When you click the View button what is gonna happen
         btnView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // When you click the Settings button what is gonna happen
         btnSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

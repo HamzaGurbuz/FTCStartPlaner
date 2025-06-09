@@ -18,9 +18,9 @@ import java.io.FileOutputStream;
 
 public class CreateStrategyActivity extends AppCompatActivity {
 
-    private EditText etName, etDesc, etAlliance, etStartPos, etEndGoal;
-    private DrawingView drawingView;
-    private StrategyDatabaseHelper dbHelper;
+    private EditText etName, etDesc, etAlliance, etStartPos, etEndGoal; // Inputs
+    private DrawingView drawingView; // Drawing Field
+    private StrategyDatabaseHelper dbHelper; // Database
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,17 +28,18 @@ public class CreateStrategyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_create_strategy);
 
         // Toolbar
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Create Strategy");
+        Toolbar toolbar = findViewById(R.id.toolbar);  // Connet the toolbar
+        setSupportActionBar(toolbar); // Define toolbar as action bar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Add Go Back button to toolbar
+        getSupportActionBar().setTitle("Create Strategy"); // Toolbar title
 
+        // Collar Buttons
         Button btnColorBlack = findViewById(R.id.btnColorBlack);
         Button btnColorRed = findViewById(R.id.btnColorRed);
         Button btnColorBlue = findViewById(R.id.btnColorBlue);
 
 
-        // View bağlantıları
+        // View connections
         etName = findViewById(R.id.etStrategyName);
         etDesc = findViewById(R.id.etDescription);
         etAlliance = findViewById(R.id.etAlliance);
@@ -48,12 +49,17 @@ public class CreateStrategyActivity extends AppCompatActivity {
         Button btnClear = findViewById(R.id.btnClearDrawing);
         Button btnSave = findViewById(R.id.btnSaveStrategy);
 
+        //  Define Database for saving strategy
         dbHelper = new StrategyDatabaseHelper(this);
 
+        // Reset Path
         btnClear.setOnClickListener(v -> drawingView.clear());
+
+        // save strategy
         btnSave.setOnClickListener(v -> saveStrategy());
 
 
+        // Color choosing
         btnColorBlack.setOnClickListener(v -> {
 
             drawingView.setPaintColor(Color.BLACK);
@@ -83,8 +89,13 @@ public class CreateStrategyActivity extends AppCompatActivity {
             return;
         }
 
+        // Get Draw
         Bitmap drawingBitmap = drawingView.getBitmap();
+
+        // Save as png
         String drawingPath = saveBitmapToFile(drawingBitmap);
+
+        // Check is path empty? if its empty show te error
         if (drawingPath == null) {
             Toast.makeText(this, "Failed to save drawing!", Toast.LENGTH_SHORT).show();
             return;
@@ -98,8 +109,11 @@ public class CreateStrategyActivity extends AppCompatActivity {
         values.put(StrategyDatabaseHelper.COLUMN_END_GOAL, endGoal);
         values.put(StrategyDatabaseHelper.COLUMN_DRAWING_PATH, drawingPath);
 
+        // add the 'values' to Table
         long id = dbHelper.getWritableDatabase().insert(StrategyDatabaseHelper.TABLE_NAME, null, values);
 
+
+        // Check Id and Show the Toast Message
         if (id > 0) {
             Toast.makeText(this, "Strategy saved!", Toast.LENGTH_SHORT).show();
             finish();
@@ -108,6 +122,7 @@ public class CreateStrategyActivity extends AppCompatActivity {
         }
     }
 
+    // Save as PNG to field
     private String saveBitmapToFile(Bitmap bitmap) {
         String filename = "strategy_" + System.currentTimeMillis() + ".png";
         File file = new File(getFilesDir(), filename);
