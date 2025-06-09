@@ -16,7 +16,7 @@ public class DrawingView extends View {
     private Paint paint = new Paint();
     private Path path = new Path();
 
-    private Bitmap backgroundBitmap;
+    private final Bitmap backgroundBitmap;
     private Canvas drawingCanvas;
     private Bitmap drawingBitmap;
 
