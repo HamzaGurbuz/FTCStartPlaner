@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Ayarlar sayfasına yönlendirme
-                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+
             }
         });
     }
