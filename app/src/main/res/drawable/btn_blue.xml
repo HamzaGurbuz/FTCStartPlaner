@@ -1,0 +1,19 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Seçiliyse (kullanıcı tıkladıysa) -->
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#0000FF"/>
+            <corners android:radius="20dp"/>
+            <stroke android:width="4dp" android:color="#00FF00"/> <!-- Yeşil border -->
+        </shape>
+    </item>
+
+    <!-- Seçili değilse -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#0000FF"/>
+            <corners android:radius="20dp"/>
+            <stroke android:width="4dp" android:color="#FFFFFF"/> <!-- Beyaz border -->
+        </shape>
+    </item>
+</selector>

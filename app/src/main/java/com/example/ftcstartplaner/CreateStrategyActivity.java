@@ -61,18 +61,24 @@ public class CreateStrategyActivity extends AppCompatActivity {
 
         // Color choosing
         btnColorBlack.setOnClickListener(v -> {
-
             drawingView.setPaintColor(Color.BLACK);
+            btnColorBlack.setSelected(true);
+            btnColorRed.setSelected(false);
+            btnColorBlue.setSelected(false);
         });
 
         btnColorRed.setOnClickListener(v -> {
-
             drawingView.setPaintColor(Color.RED);
+            btnColorBlack.setSelected(false);
+            btnColorRed.setSelected(true);
+            btnColorBlue.setSelected(false);
         });
 
         btnColorBlue.setOnClickListener(v -> {
-
             drawingView.setPaintColor(Color.BLUE);
+            btnColorBlack.setSelected(false);
+            btnColorRed.setSelected(false);
+            btnColorBlue.setSelected(true);
         });
 
     }

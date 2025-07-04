@@ -6,4 +6,13 @@
     </style>
 
     <style name="Theme.FTCStartPlaner" parent="Base.Theme.FTCStartPlaner" />
+
+    <style name="Theme.MyApp.Light" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Light mode renk ayarları -->
+    </style>
+
+    <style name="Theme.MyApp.Dark" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Dark mode renk ayarları -->
+    </style>
+
 </resources>

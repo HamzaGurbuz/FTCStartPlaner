@@ -24,7 +24,6 @@
         <activity android:name=".CreateStrategyActivity" />
         <activity android:name=".StrategyListActivity" />
         <activity android:name=".StrategyDetailActivity" />
-        <activity android:name=".SettingsActivity" />
     </application>
 
 </manifest>

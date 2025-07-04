@@ -88,25 +88,29 @@
                 android:gravity="center"
                 android:padding="8dp">
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnColorBlack"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:backgroundTint="#000000" />
+                    android:background="@drawable/btn_black"
+                    android:backgroundTint="@null"
+                    android:stateListAnimator="@null"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnColorRed"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:backgroundTint="#FF0000"
-                    android:layout_marginStart="10dp"/>
+                    android:background="@drawable/btn_red"
+                    android:backgroundTint="@null"
+                    android:stateListAnimator="@null"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnColorBlue"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:backgroundTint="#0000FF"
-                    android:layout_marginStart="10dp"/>
+                    android:background="@drawable/btn_blue"
+                    android:backgroundTint="@null"
+                    android:stateListAnimator="@null"/>
 
 
             </LinearLayout>

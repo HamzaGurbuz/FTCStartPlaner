@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.example.ftcstartplaner.R;
 
@@ -23,6 +24,11 @@ public class MainActivity extends AppCompatActivity {
         btnCreate = findViewById(R.id.btnCreateStrategy);
         btnView = findViewById(R.id.btnViewStrategies);
         btnSettings = findViewById(R.id.btnSettings);
+
+        AppCompatDelegate.setDefaultNightMode(
+                // Tercihe göre ayarlanmalı, örnek:
+                AppCompatDelegate.MODE_NIGHT_YES // veya MODE_NIGHT_NO
+        );
 
 
         // When you click the crate button what is gonna happen
