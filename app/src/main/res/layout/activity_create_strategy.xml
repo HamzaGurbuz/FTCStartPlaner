@@ -123,7 +123,7 @@
                 android:layout_height="wrap_content"
                 android:text="Clear Drawing"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="24dp"/>
+                android:layout_marginBottom="24dp" />
 
             <!-- Kaydet Butonu -->
             <Button

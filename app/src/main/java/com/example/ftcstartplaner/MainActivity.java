@@ -1,7 +1,9 @@
 package com.example.ftcstartplaner;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -18,20 +20,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences prefs = getSharedPreferences("settings", MODE_PRIVATE);
+        boolean isDark = prefs.getBoolean("dark_mode", false);
+
+        AppCompatDelegate.setDefaultNightMode(
+                isDark ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO
+        );
+
         setContentView(R.layout.activity_main);
 
-        // Connecting buttons on java
         btnCreate = findViewById(R.id.btnCreateStrategy);
         btnView = findViewById(R.id.btnViewStrategies);
         btnSettings = findViewById(R.id.btnSettings);
 
-        AppCompatDelegate.setDefaultNightMode(
-                // Tercihe göre ayarlanmalı, örnek:
-                AppCompatDelegate.MODE_NIGHT_NO // veya MODE_NIGHT_NO
-        );
-
-
-        // When you click the crate button what is gonna happen
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // When you click the View button what is gonna happen
         btnView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,13 +48,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // When you click the Settings button what is gonna happen
         btnSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Ayarlar sayfasına yönlendirme
-
+                startActivity(new Intent(MainActivity.this, SettingActivity.class));
             }
         });
     }
+
 }
