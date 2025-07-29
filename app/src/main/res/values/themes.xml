@@ -1,18 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.FTCStartPlaner" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.FTCStartPlaner" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
     <style name="Theme.FTCStartPlaner" parent="Base.Theme.FTCStartPlaner" />
 
-    <style name="Theme.MyApp.Light" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Light mode renk ayarları -->
-    </style>
-
-    <style name="Theme.MyApp.Dark" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Dark mode renk ayarları -->
-    </style>
 
 </resources>

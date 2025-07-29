@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         AppCompatDelegate.setDefaultNightMode(
                 // Tercihe göre ayarlanmalı, örnek:
-                AppCompatDelegate.MODE_NIGHT_YES // veya MODE_NIGHT_NO
+                AppCompatDelegate.MODE_NIGHT_NO // veya MODE_NIGHT_NO
         );
 
 

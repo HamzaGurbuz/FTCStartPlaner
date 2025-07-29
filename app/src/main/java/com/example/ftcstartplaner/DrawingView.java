@@ -37,8 +37,10 @@ public class DrawingView extends View {
         super.onSizeChanged(w, h, oldw, oldh);
 
         drawingBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+        drawingBitmap.eraseColor(Color.TRANSPARENT); // bu satır eklendi
         drawingCanvas = new Canvas(drawingBitmap);
     }
+
 
     @Override
     protected void onDraw(Canvas canvas) {
