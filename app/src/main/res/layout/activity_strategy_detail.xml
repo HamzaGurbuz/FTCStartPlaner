@@ -1,69 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <!-- Toolbar (geri gitme butonlu başlık çubuğu) -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/ic_arrow_back"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        <TextView
-            android:id="@+id/tvDetailName"
-            android:textSize="24sp"
-            android:textStyle="bold"
+
+    <!-- İçerik kısmı ScrollView içinde -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="8dp"/>
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tvDetailAlliance"
-            android:textSize="18sp"
-            android:padding="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#FFF"
-            android:layout_marginBottom="12dp"/>
+            <TextView
+                android:id="@+id/tvDetailName"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp" />
 
-        <TextView
-            android:id="@+id/tvDetailDescription"
-            android:textSize="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"/>
+            <TextView
+                android:id="@+id/tvDetailAlliance"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:layout_marginBottom="12dp" />
 
-        <TextView
-            android:id="@+id/tvDetailStartPos"
-            android:textSize="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"/>
+            <TextView
+                android:id="@+id/tvDetailDescription"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp" />
 
-        <TextView
-            android:id="@+id/tvDetailEndGoal"
-            android:textSize="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"/>
+            <TextView
+                android:id="@+id/tvDetailStartPos"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp" />
 
-        <ImageView
-            android:id="@+id/ivDetailDrawing"
-            android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:scaleType="fitCenter"
-            android:contentDescription="Strategy Drawing" />
+            <TextView
+                android:id="@+id/tvDetailEndGoal"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp" />
 
-        <!-- Pars Robotics Etiketi -->
-        <TextView
-            android:id="@+id/tvCredits"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Developed by Pars Robotics #6436"
-            android:textColor="#999999"
-            android:textSize="12sp"
-            android:layout_marginTop="24dp"
-            android:layout_gravity="center_horizontal"/>
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/ivDetailDrawing"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="Strategy Drawing" />
 
-</ScrollView>
+            <!-- Pars Robotics Etiketi -->
+            <TextView
+                android:id="@+id/tvCredits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Developed by Pars Robotics #6436"
+                android:textColor="#999999"
+                android:textSize="12sp"
+                android:layout_marginTop="24dp"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

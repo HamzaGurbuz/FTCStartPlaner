@@ -17,20 +17,23 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.7" />
+            android:layout_weight="0.2" />
+
+        <!-- Başlangıçta boş View yerine ImageView -->
+
 
         <!-- Başlık -->
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="FTC Start Planner"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:textColor="#212121"
-            android:layout_marginBottom="48dp"/>
 
         <!-- Yeni Strateji -->
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="488dp"
+            android:layout_height="422dp"
+            android:layout_marginBottom="-140dp"
+            android:contentDescription="App Logo"
+            android:scaleType="centerInside"
+            android:src="@drawable/logo" />
+
         <Button
             android:id="@+id/btnCreateStrategy"
             android:layout_width="match_parent"
@@ -43,6 +46,7 @@
             android:layout_marginBottom="24dp"/>
 
         <!-- Kayıtlıları Görüntüle -->
+
         <Button
             android:id="@+id/btnViewStrategies"
             android:layout_width="match_parent"
@@ -51,12 +55,12 @@
             android:padding="16dp"
             android:text="📂 Look at Strategies"
             android:textColor="#FFFFFF"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="0.6" />
 
         <!-- Pars Robotics Etiketi -->
         <TextView

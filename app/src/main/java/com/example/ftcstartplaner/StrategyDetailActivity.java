@@ -9,11 +9,22 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class StrategyDetailActivity extends AppCompatActivity {
 
     private TextView tvName, tvDescription, tvAlliance, tvStartPos, tvEndGoal;
     private ImageView ivDrawing;
+
+    @Override
+    public boolean onOptionsItemSelected(android.view.MenuItem item) {
+        if (item.getItemId() == android.R.id.home) { // Toolbar'daki geri butonu
+            onBackPressed(); // Aktiviteyi kapat ve önceki sayfaya dön
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,6 +37,12 @@ public class StrategyDetailActivity extends AppCompatActivity {
         tvStartPos = findViewById(R.id.tvDetailStartPos);
         tvEndGoal = findViewById(R.id.tvDetailEndGoal);
         ivDrawing = findViewById(R.id.ivDetailDrawing);
+
+        // Toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);  // Connet the toolbar
+        setSupportActionBar(toolbar); // Define toolbar as action bar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Add Go Back button to toolbar
+        getSupportActionBar().setTitle("Strategy Detail"); // Toolbar title
 
         // Intent'ten verileri alıyoruz
         Strategy strategy = (Strategy) getIntent().getSerializableExtra("strategy");
@@ -58,6 +75,8 @@ public class StrategyDetailActivity extends AppCompatActivity {
             } else {
                 ivDrawing.setImageResource(R.drawable.field);
             }
+
+
         }
     }
 }
